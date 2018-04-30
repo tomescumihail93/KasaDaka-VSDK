@@ -1,0 +1,20 @@
+heroku login
+email: michel.cojo@gmail.com
+pass: abc123$%^
+
+cd KasaDaka-VSDK
+
+heroku create leza
+git push heroku master 
+[...
+remote:        https://leza.herokuapp.com/ deployed to Heroku
+...]
+heroku ps:scale web=1
+heroku logs --tail
+[CONTROL+C]
+
+heroku ps
+heroku run python manage.py shell 
+heroku run bash 
+
+heroku run python manage.py migrate 
