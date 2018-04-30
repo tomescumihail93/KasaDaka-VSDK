@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-
+from vsdk.api import views
 admin.site.site_header = _("KasaDaka Voice Services")
 
 urlpatterns = [
     url(r'^', admin.site.urls),
     url(r'^vxml/', include('vsdk.service_development.urls')),
+    url(r'^forecasts/$', views.ForecastList.as_view()),
+    url(r'^forecasts/(?P<region_id>\w+)/(?P<day>\w+)/$', views.ForecastDetail.as_view()),
+    url(r'^alerts/(?P<region_id>\w+)/$', views.AlertDetail.as_view())
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if not settings.DEBUG:
