@@ -1,0 +1,30 @@
+heroku login
+email: michel.cojo@gmail.com
+pass: abc123$%^
+
+cd KasaDaka-VSDK
+
+heroku create --region eu leza 
+git push heroku master 
+
+3. run pip install -r requirements.txt
+4. Run: python manage.py makemigrations
+5. Run: python manage.py migrate
+6. Run: python manage.py createsuperuser
+7. Not mandatory to initialize test vxml app: python manage.py loaddata initial_data.json
+8. Run: python manage.py runserver
+
+[...
+remote:        https://leza.herokuapp.com/ deployed to Heroku
+...]
+heroku ps:scale web=1
+heroku logs --tail
+[CONTROL+C]
+
+
+
+heroku ps
+heroku run python manage.py shell 
+heroku run bash 
+
+heroku run python manage.py migrate 

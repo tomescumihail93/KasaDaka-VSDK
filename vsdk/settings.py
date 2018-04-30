@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import dj-database-url
+import dj_database_url
 #from . import custom_storages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -32,7 +32,7 @@ SECRET_KEY = 'tk2(l(00&kfe7j97j$dvgz&b6r!kk_zbse1(9w*eoc$bcwu773'
 ##########
 #Use True on your local PC, False on Heroku!!
 ########
-DEBUG = True
+DEBUG = False
 
 # DEBUG = False
 
@@ -91,14 +91,18 @@ WSGI_APPLICATION = 'vsdk.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-# DATABASES = {
-#      'default': {
-# 		 'ENGINE': 'django.db.backends.sqlite3',
-# 		 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-# 	     }}
+#DATABASES = {
+#     'default': {
+#		 'ENGINE': 'django.db.backends.sqlite3',
+#		 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#	     }}
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 #Heroku db connection
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
