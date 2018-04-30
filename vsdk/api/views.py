@@ -49,7 +49,8 @@ class ForecastDetail(APIView):
 # alerts/{region_id}
 class AlertDetail(APIView):
     def get(self, request, region_id,):
-        alerts = Alert.objects.all()
+        region = Region.objects.get(region_code=region_id)
+        alerts = Alert.objects.filter(region=region)
         # forecasts = Forecast.objects.all()
         serializer = AlertSerializer(alerts, context={'request': request}, many=True)
         return Response(serializer.data)
