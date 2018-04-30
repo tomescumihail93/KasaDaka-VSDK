@@ -1,5 +1,6 @@
 # KasaDaka-Voice Service Development Kit
 
+Created by one of the best student groups at VU
 
 ## Project setup
 
