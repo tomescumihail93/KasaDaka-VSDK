@@ -28,3 +28,10 @@ heroku run python manage.py shell
 heroku run bash 
 
 heroku run python manage.py migrate 
+
+heroku config:set  SFTP_PASS=<password>
+> heroku config:set  SFTP_USER=group<x>
+> heroku config:set  SFTP_HOST=django-static.vps.abaart.nl
+> heroku config:set  SFTP_PORT=22018
+> heroku config:set  HEROKU=True
+
