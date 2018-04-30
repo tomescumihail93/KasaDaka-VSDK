@@ -50,7 +50,8 @@ class ForecastDetail(APIView):
 class AlertDetail(APIView):
     def get(self, request, region_id,):
         region = Region.objects.get(region_code=region_id)
-        alerts = Alert.objects.filter(region=region)
+        alertDate = datetime.now()
+        alerts = Alert.objects.filter(region=region, pub_date__year=alertDate.year, pub_date__month=alertDate.month, pub_date__day=alertDate.day)
         # forecasts = Forecast.objects.all()
         serializer = AlertSerializer(alerts, context={'request': request}, many=True)
         return Response(serializer.data)
