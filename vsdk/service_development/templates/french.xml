@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1" >
+<var name="regionId" />
+<var name="chosenDay" />
+<menu id="entry" dtmf="true">
+    <prompt xml:lang="fr-CA"> Vous avez choisi le français. </prompt>
+    <break size="small" />
+    <prompt xml:lang="fr-CA"> Pour recevoir les alertes pour la météorologiques à venir, appuyez sur un. </prompt>
+    <prompt xml:lang="fr-CA"> Pour recevoir les prévisions météorologiques, appuyez sur deux. </prompt>
+
+    <choice dtmf="1" next="#alerts"/>
+    <choice dtmf="2" next="#forecast"/>
+</menu>
+
+<form id="alerts">
+    <block>
+    <prompt xml:lang="fr-CA"> Aucune alerte pour les cinq prochains jours. </prompt>
+    <goto next="#entry" />
+    </block>
+</form>
+
+<menu id="forecast" dtmf="true">
+    <prompt xml:lang="fr-CA"> Veuillez choisir la région pour laquelle vous souhaitez recevoir les prévisions météorologiques. </prompt>
+
+    <prompt xml:lang="fr-CA"> Pour Boucle du Mouhoun, appuyez sur un. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Cascades, appuyez sur deux. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Centre, appuyez sur trois. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Centre-Est, appuyez sur quatre. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Centre-Nord, appuyez sur cinq. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Centre-Ouest, appuyez sur six. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Centre-Sud, appuyez sur sept. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Est, appuyez sur huit. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Hauts-Bassins, appuyez sur neuf. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Nord press, appuyez sur dix. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Plateau-Central, appuyez sur onze. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Sahel, appuyez sur douze. </prompt>
+    <prompt xml:lang="fr-CA"> Pour Sud-Ouest, appuyez sur treize. </prompt>
+
+    <choice dtmf="1" next="#form1"/>
+    <choice dtmf="2" next="#form2"/>
+    <choice dtmf="3" next="#form3"/>
+    <choice dtmf="4" next="#form4"/>
+    <choice dtmf="5" next="#form5"/>
+    <choice dtmf="6" next="#form6"/>
+    <choice dtmf="7" next="#form7"/>
+    <choice dtmf="8" next="#form8"/>
+    <choice dtmf="9" next="#form9"/>
+    <choice dtmf="10" next="#form10"/>
+    <choice dtmf="11" next="#form11"/>
+    <choice dtmf="12" next="#form12"/>
+    <choice dtmf="13" next="#form13"/>
+</menu>
+
+<form id="form1">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Boucle du Mouhoun. </prompt>
+        <assign name="regionId" expr="'2361477'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form2">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Cascades. </prompt>
+        <assign name="regionId" expr="'2362909'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form3">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Centre. </prompt>
+        <assign name="regionId" expr="'2357048'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form4">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Centre-Est. </prompt>
+        <assign name="regionId" expr="'2354675'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form5">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Centre-Nord. </prompt>
+        <assign name="regionId" expr="'2359608'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form6">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Centre-Ouest. </prompt>
+        <assign name="regionId" expr="'2358946'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form7">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Centre-Sud. </prompt>
+        <assign name="regionId" expr="'2358100'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form8">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Est.   </prompt>
+        <assign name="regionId" expr="'2360886'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form9">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Hauts-Bassins. </prompt>
+        <assign name="regionId" expr="'2362344'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form10">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Nord. </prompt>
+        <assign name="regionId" expr="'2357043'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form11">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Plateau-Central. </prompt>
+        <assign name="regionId" expr="'2353257'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form12">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Sahel. </prompt>
+        <assign name="regionId" expr="'2361082'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form13">
+    <block>
+        <prompt xml:lang="fr-CA"> Vous avez choisi Sud-Ouest. </prompt>
+        <assign name="regionId" expr="'2577162'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<menu id="chooseDay" dtmf="true">
+
+    <prompt xml:lang="fr-CA"> Veuillez choisir s'il vous plaît le jour pour lequel vous souhaitez entendre les prévisions météorologiques.</prompt>
+    
+    <choice next="#dayOne" />
+    <choice next="#dayTwo" />
+    <choice next="#dayThree" />
+    <choice next="#dayFour" />
+    <choice next="#dayFive" />
+
+</menu>
+
+<form id="dayOne">
+    <block>
+        <assign name="chosenDay" expr="'0'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayTwo">
+    <block>
+        <assign name="chosenDay" expr="'8'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayThree">
+    <block>
+        <assign name="chosenDay" expr="'16'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayFour">
+    <block>
+        <assign name="chosenDay" expr="'24'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayFive">
+    <block>
+        <assign name="chosenDay" expr="'32'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<menu id="chooseAnotherDay" dtmf="true">
+        <prompt xml:lang="fr-CA"> Voulez-vous entendre les prévisions pour un autre jour? </prompt>
+        <prompt xml:lang="fr-CA"> Pour oui, appuyez sur un. </prompt>
+        <prompt xml:lang="fr-CA"> Pour non, appuyer sur deux. </prompt>
+        <choice next="#chooseDay" />
+        <choice next="#end" />
+</menu>
+
+<form id="end">
+    <block>
+        <prompt xml:lang="fr-CA"> Au revoir! </prompt>
+    </block>
+</form>
+
+<form id="getWeatherForm">
+    <script>
+    <![CDATA[
+    function getDays(){
+        return new Array(0,8,16,24,32,39);
+    }
+    ]]>
+    </script>
+
+    <block>
+        <data name="forecasts" srcexpr="'http://api.openweathermap.org/data/2.5/forecast?id='+ regionId +'&amp;APPID=5e37ff7e7681a736bf2079b2f65440f2'" method="get" />
+
+            <break size="small"/>
+        <prompt xml:lang="fr-CA"> Voici les prévisions pour le jour sélectionné. </prompt>
+        <break size="small"/>
+
+        <var name="forecast" expr="forecasts['list'][chosenDay]"/>
+
+        <prompt xml:lang="fr-CA"> à </prompt>
+        <value expr="forecast['dt_txt'].substr(8,2)"/>
+        <break size="small"/>
+        <prompt xml:lang="fr-CA"> la prévision est </prompt>
+        <break size="small"/>
+        <value expr="forecast['weather'][0].description"/>
+        <break size="small"/>
+        <prompt xml:lang="fr-CA"> La température sera </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['main']['temp']-273)"/>
+        <prompt xml:lang="fr-CA"> degrés, et la vitesse du vent de </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['wind']['speed'])"/>
+        <prompt xml:lang="fr-CA"> mètres par seconde, sous l'angle </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['wind']['deg'])"/>
+        <prompt xml:lang="fr-CA"> degrés. </prompt>
+        <break size="small"/>
+
+        <goto next="#chooseAnotherDay" />
+        
+    </block>
+</form>
+
+</vxml>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1" >
+<var name="regionId" />
+<var name="chosenDay" />
+<menu id="entry" dtmf="true">
+    <prompt> You have chosen English. </prompt>
+    <break size="small" />
+    <prompt> To get warnings and alerts for upcoming weather press one. </prompt>
+    <prompt> To receive information about the weather forecast press two. </prompt>
+
+    <choice dtmf="1" next="#alerts"/>
+    <choice dtmf="2" next="#forecast"/>
+</menu>
+
+<form id="alerts">
+        <block>
+            <prompt> No alerts for the next five days. </prompt>
+            <goto next="#entry" /> 
+        </block>
+
+</form>
+
+<menu id="forecast" dtmf="true">
+        <prompt> Please choose the region for which you want the forcast. </prompt>
+        
+        <prompt> For Boucle du Mouhoun press one. </prompt>
+        <prompt> For Cascades press two. </prompt>
+        <prompt> For Centre press three. </prompt>
+        <prompt> For Centre-Est press four. </prompt>
+        <prompt> For Centre-Nord press five. </prompt>
+        <prompt> For Centre-Ouest press six. </prompt>
+        <prompt> For Centre-Sud press seven. </prompt>
+        <prompt> For Est press eight. </prompt>
+        <prompt> For Hauts-Bassins press nine. </prompt>
+        <prompt> For Nord press ten. </prompt>
+        <prompt> For Plateau-Central press eleven. </prompt>
+        <prompt> For Sahel press twelve. </prompt>
+        <prompt> For Sud-Ouest press thirteen. </prompt>
+        
+        <choice dtmf="1" next="#form1"/>
+        <choice dtmf="2" next="#form2"/>
+        <choice dtmf="3" next="#form3"/>
+        <choice dtmf="4" next="#form4"/>
+        <choice dtmf="5" next="#form5"/>
+        <choice dtmf="6" next="#form6"/>
+        <choice dtmf="7" next="#form7"/>
+        <choice dtmf="8" next="#form8"/>
+        <choice dtmf="9" next="#form9"/>
+        <choice dtmf="10" next="#form10"/>
+        <choice dtmf="11" next="#form11"/>
+        <choice dtmf="12" next="#form12"/>
+        <choice dtmf="13" next="#form13"/>
+</menu>
+
+<form id="form1">
+    <block>
+        <prompt> You chose Boucle du Mouhoun. </prompt>
+        <assign name="regionId" expr="'2361477'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form2">
+    <block>
+        <prompt>    You chose Cascades   </prompt>
+        <assign name="regionId" expr="'2362909'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form3">
+    <block>
+        <prompt>    You chose Centre   </prompt>
+        <assign name="regionId" expr="'2357048'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form4">
+    <block>
+        <prompt>    You chose Centre-Est   </prompt>
+        <assign name="regionId" expr="'2354675'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form5">
+    <block>
+        <prompt>    You chose Centre-Nord   </prompt>
+        <assign name="regionId" expr="'2359608'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form6">
+    <block>
+        <prompt>    You chose Centre-Ouest   </prompt>
+        <assign name="regionId" expr="'2358946'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form7">
+    <block>
+        <prompt>    You chose Centre-Sud   </prompt>
+        <assign name="regionId" expr="'2358100'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form8">
+    <block>
+        <prompt>    You chose Est   </prompt>
+        <assign name="regionId" expr="'2360886'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form9">
+    <block>
+        <prompt>    You chose Hauts-Bassins   </prompt>
+        <assign name="regionId" expr="'2362344'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form10">
+    <block>
+        <prompt>    You chose Nord   </prompt>
+        <assign name="regionId" expr="'2357043'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form11">
+    <block>
+        <prompt>    You chose Plateau-Central   </prompt>
+        <assign name="regionId" expr="'2353257'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form12">
+    <block>
+        <prompt>    You chose Sahel   </prompt>
+        <assign name="regionId" expr="'2361082'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<form id="form13">
+    <block>
+        <prompt>    You chose Sud-Ouest   </prompt>
+        <assign name="regionId" expr="'2577162'" />
+        <goto next="#chooseDay" />
+    </block>
+</form>
+
+<menu id="chooseDay" dtmf="true">
+    
+        <prompt> Please choose the day you would like to hear the weather forecast.</prompt>
+        <choice next="#dayOne" />
+        <choice next="#dayTwo" />
+        <choice next="#dayThree" />
+        <choice next="#dayFour" />
+        <choice next="#dayFive" />
+        
+    
+</menu>
+
+<form id="dayOne">
+    <block>
+        <assign name="chosenDay" expr="'0'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayTwo">
+    <block>
+        <assign name="chosenDay" expr="'8'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayThree">
+    <block>
+        <assign name="chosenDay" expr="'16'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayFour">
+    <block>
+        <assign name="chosenDay" expr="'24'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<form id="dayFive">
+    <block>
+        <assign name="chosenDay" expr="'32'" />
+        <goto next="#getWeatherForm" />
+    </block>
+</form>
+
+<menu id="chooseAnotherDay" dtmf="true">
+        <prompt> Would you like to hear the forecast for another day? </prompt>
+        <prompt> For yes press one. </prompt>
+        <prompt> For no press two. </prompt>
+        <choice next="#chooseDay" />
+        <choice next="#end" />
+</menu>
+
+<form id="end">
+    <block>
+        <prompt> Bye bye. </prompt>
+    </block>
+</form>
+
+<form id="getWeatherForm"> 
+    <script>
+    <![CDATA[
+        function getDays(){
+            return new Array(0,8,16,24,32,39);
+        }
+    ]]>
+    </script>
+
+    <block>
+        <data name="forecasts" srcexpr="'http://api.openweathermap.org/data/2.5/forecast?id='+ regionId +'&amp;APPID=5e37ff7e7681a736bf2079b2f65440f2'" method="get" />
+      
+        <break size="small"/>
+        <prompt> Here's the forcast for the chosen day. </prompt>
+        <break size="small"/>
+        
+        <var name="forecast" expr="forecasts['list'][chosenDay]"/>
+        <prompt> On </prompt>
+        <value expr="forecast['dt_txt'].substr(8,2)"/>
+        <break size="small"/>
+        <prompt> the forecast is </prompt>
+        <break size="small"/>
+        <value expr="forecast['weather'][0].description"/>
+        <break size="small"/>
+        <prompt> The temperature will be </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['main']['temp']-273)"/> 
+        <prompt> degrees, and wind speed of </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['wind']['speed'])"/> 
+        <prompt> meters per second, under angle </prompt>
+        <break size="small"/>
+        <value expr="parseInt(forecast['wind']['deg'])"/>
+        <prompt> degrees. </prompt>
+        <break size="small"/>
+
+        <goto next="#chooseAnotherDay" />
+   
+    </block>
+</form>
+
+</vxml>

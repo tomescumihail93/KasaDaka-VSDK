@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1" >
+
+<form>
+    <block>
+        <prompt>   You reached LEZA weather application! </prompt>
+        <break size="small"/>
+        <prompt> Please choose your preferred language. </prompt>
+        <break size="small"/>
+        <goto next="#options" />
+    </block>
+</form>
+
+<menu id="options" dtmf="true">
+    <prompt> For English press 1, For French press 2, for Moore press 3. </prompt>
+    <choice next="http://webhosting.voxeo.net/204398/www/english.xml#entry"/>
+    <choice next="http://webhosting.voxeo.net/204398/www/french.xml#entry"/>
+    <choice next="http://webhosting.voxeo.net/204398/www/moore.xml#entry"/>
+</menu>
+</vxml>
