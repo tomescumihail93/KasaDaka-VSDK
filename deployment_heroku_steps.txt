@@ -9,6 +9,8 @@ git push heroku master
 
 3. run pip install -r requirements.txt
 4. Run: python manage.py makemigrations
+4. Run: python manage.py makemigrations api
+4. Run: python manage.py makemigrations server_development
 5. Run: python manage.py migrate
 6. Run: python manage.py createsuperuser
 7. Not mandatory to initialize test vxml app: python manage.py loaddata initial_data.json
